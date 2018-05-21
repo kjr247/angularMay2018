@@ -36,7 +36,8 @@
     "core-js": "^2.5.6",
     "rxjs": "^5.0.1",
     "systemjs": "^0.19.40",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "minimatch": "3.0.2"
   },
   "devDependencies": {
     "concurrently": "^3.2.0",
