@@ -1,0 +1,44 @@
+<h1>{{customer.name}}</h1>
+<p>
+  <i>
+    {{customer.name}} is at {{customer.address.street}} in {{customer.address.city}}, {{customer.address.state}} in the {{customer.address.region}}
+    region
+  </i>
+</p>
+<br/>
+
+<fieldset>
+  <label>Name:</label>
+  <input [(ngModel)]="customer.name" />
+</fieldset>
+
+<label>
+  <input type="checkbox" [(ngModel)]="showAddress"> Show Address </label>
+
+<div *ngIf="showAddress">
+  <customer-detail></customer-detail>
+  <h1>{{customer.name}}</h1>
+  <fieldset>
+    <label> City: </label>
+    <input [(ngModel)]="customer.address.city" />
+  </fieldset>
+
+  <fieldset>
+    <label> Street: </label>
+    <input [(ngModel)]="customer.address.street" />
+  </fieldset>
+
+  <fieldset>
+    <label> State: </label>
+    <select #selector [(ngModel)]="customer.address.state">
+      <option *ngFor="let state of states">{{state}}</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <label> Region: </label>
+    <select #selector [(ngModel)]="customer.address.region">
+      <option *ngFor="let region of regions">{{region}}</option>
+    </select>
+  </fieldset>
+</div>
