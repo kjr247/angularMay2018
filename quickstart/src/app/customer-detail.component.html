@@ -11,11 +11,17 @@
   </i></p>
 
   <fieldset>
-    <label> Name: <input [(ngModel)]="customer.name" placeholder="Customer name"> </label>
+    <label>
+      Name:
+      <input [(ngModel)]="customer.name" placeholder="Customer name">
+    </label>
   </fieldset>
 
   <br>
   <label><input type="checkbox" [(ngModel)]="showAddress"/>Show address</label>
 
-  <my-address [address]>="customer.address"</my-address>
+  <div *ngIf="showAddress">
+    <h3>Address:</h3>
+    <my-address [address]="customer.address"></my-address>
+  </div>
 </div>
