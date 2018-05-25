@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { AddressComponent } from './address-comp.component';
 import { AppComponent } from './app.component';
 import { CustomerDetailComponent } from './customer-detail.component';
 import { CustomerListComponent } from './customer-list.component';
@@ -13,6 +14,7 @@ import { CustomerListComponent } from './customer-list.component';
   ],
   declarations: [             // What's in my app module?
     AppComponent,
+    AddressComponent,
     CustomerDetailComponent,
     CustomerListComponent
   ],

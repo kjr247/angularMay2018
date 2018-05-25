@@ -8,8 +8,6 @@ import { Customer } from './model';
 })
 
 export class CustomerDetailComponent  {
-  regions = ['East', 'South', 'West', 'North', 'Midwest', 'Trump Tower'];
-  states = ['California', 'Quebec', 'Jalisco', 'Illinois'];
   @Input() customer: Customer;
   showAddress = true;
 }
