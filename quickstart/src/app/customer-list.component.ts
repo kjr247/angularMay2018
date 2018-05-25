@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
 import { Customer } from './model';
 
+
 @Component({
   moduleId: module.id,
-  selector: 'customer-list', // to use me, use as html tag <my-app>
+  selector: 'customer-list',
   templateUrl: 'customer-list.component.html',
   styleUrls: ['customer-list.component.css']
 })
 
 export class CustomerListComponent  {
+
+  customer: Customer;
+
   customers: Customer[] = [
     {
       id: 1,
@@ -51,5 +55,4 @@ export class CustomerListComponent  {
       }
     },
   ];
-  customer: Customer;
 }
