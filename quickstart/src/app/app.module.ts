@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AddressComponent } from './address-comp.component';
+import { AddressComponent } from './address.component';
 import { AppComponent } from './app.component';
 import { CustomerDetailComponent } from './customer-detail.component';
 import { CustomerListComponent } from './customer-list.component';

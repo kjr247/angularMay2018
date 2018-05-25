@@ -17,7 +17,5 @@
   <br>
   <label><input type="checkbox" [(ngModel)]="showAddress"/>Show address</label>
 
-  <div *ngIf="showAddress">
-    <address-comp [address]>="customer.address"</address-comp>
-  </div>
+  <my-address [address]>="customer.address"</my-address>
 </div>
