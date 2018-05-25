@@ -1,20 +1,21 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppComponent }  from './app.component';
-import { CustomerListComponent }  from './customer-list.component';
-import { CustomerDetailComponent }  from './customer-detail.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { CustomerDetailComponent } from './customer-detail.component';
+import { CustomerListComponent } from './customer-list.component';
+
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ], // what stuff do I need?
-  declarations: [
+  imports: [                  // What stuff do I need?
+    BrowserModule,
+    FormsModule
+  ],
+  declarations: [             // What's in my app module?
     AppComponent,
-    CustomerListComponent,
-    CustomerDetailComponent
-  ], // what things are in my app?
-  bootstrap:    [ AppComponent ], // where do I start?,
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+    CustomerDetailComponent,
+    CustomerListComponent
+  ],
+  bootstrap: [ AppComponent ] // Where do I start?
 })
 export class AppModule { }
