@@ -31,8 +31,13 @@ export class CustomerListComponent implements OnInit  {
     this.dataService.getCustomersP().then(custs => {
     // this.dataService.getCustomers().subscribe(custs => {
       this.isBusy = false;
+      console.log(this.customers);
       this.customers = custs;
-    });
+    }, (errorMsg: string) => {
+      this.isBusy = false;
+      alert(errorMsg);
+    }
+  );
   }
 
   shift(increment: number) {
