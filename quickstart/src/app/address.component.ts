@@ -9,20 +9,20 @@ import { LoggerService } from './logger.service';
   selector: 'my-address',
   templateUrl: 'address.component.html'
 })
+
 export class AddressComponent implements OnInit  {
+  @Input() address: Address;
+  regions   = ['East', 'Midwest', 'North', 'South', 'West'];
+  states    = [''];
   private isGettingStates = false;
   constructor(
     private dataService: DataService,
     private logger: LoggerService) { }
 
-  @Input() address: Address;
-
   ngOnInit() {
     this.getStates();
   }
 
-  regions   = ['East', 'Midwest', 'North', 'South', 'West'];
-  states    = [''];
   getStates() {
     this.isGettingStates = true;
     this.logger.log(`Getting states ... `);
