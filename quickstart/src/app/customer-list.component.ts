@@ -55,4 +55,12 @@ export class CustomerListComponent  {
       }
     },
   ];
+
+  shift(increment: number) {
+    let ix = this.customers.findIndex(c => c === this.customer) + increment;
+    console.log(this.customers.length);
+    ix = Math.min(this.customers.length - 1, Math.max(0, ix));
+    console.log(ix);
+    this.customer = this.customers[ix];
+  }
 }

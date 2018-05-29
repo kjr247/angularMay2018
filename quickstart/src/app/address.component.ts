@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Address } from './model';
 
+import { Address } from './model';
 
 @Component({
   moduleId: module.id,

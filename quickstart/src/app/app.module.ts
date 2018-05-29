@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AddressComponent } from './address.component';
-import { AppComponent } from './app.component';
-import { CustomerDetailComponent } from './customer-detail.component';
-import { CustomerListComponent } from './customer-list.component';
+import { FormsModule }   from '@angular/forms';
 
+import { AppComponent }            from './app.component';
+import { AddressComponent }        from './address.component';
+import { CustomerDetailComponent } from './customer-detail.component';
+import { CustomerListComponent }   from './customer-list.component';
 
 @NgModule({
   imports: [                  // What stuff do I need?

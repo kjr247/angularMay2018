@@ -3,7 +3,11 @@
 
   <!--Diagnostic: {{ customer | json }}-->
 
-  <h2>{{customer.name}}</h2>
+  <h2>
+    <button (click)="left()"><</button>
+    {{customer.name}}
+    <button (click)="right()">></button>
+  </h2>
 
    <p><i>
     {{customer.name}} is at {{customer.address.street}} in {{customer.address.city}}
