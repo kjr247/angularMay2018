@@ -11,7 +11,8 @@ import 'rxjs/add/operator/catch'; // <-- add rxjs operator extensions used here
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw'; // <-- add rxjs Observable extensions used here
 
 @Injectable()
@@ -37,7 +38,7 @@ export class DataService {
       .catch((error: any) => {
         this.logger.log(`An error occurred ${error}`); // for demo purposes only
         // re-throw user-facing message
-        return Promise.reject('Something bad happened with customers; please check the console');
+        return Promise.reject('Something bad happened with getting customers please check the console');
       });
   }
 
@@ -47,7 +48,11 @@ export class DataService {
 
     return this.http.get(this.customersUrl)
       .map(response => response.json().data as Customer[])  // <-- extract data
-      .do(custs => this.logger.log(`Got ${custs.length} customers`));
+      .do(custs => this.logger.log(`Got ${custs.length} customers`))
+      .catch( (error: any) => {
+        this.logger.log(`An error occurred ${error}`); // for demo purposes only
+        return Observable.throw('Something bad happened with getting customers please check the console', error);
+      } );
   }
 
   getStates(): Observable<string[]> {
@@ -55,6 +60,10 @@ export class DataService {
 
     return this.http.get(this.statesUrl)
       .map(response => response.json().data as string[])
-      .do( states => this.logger.log(`Got ${states.length} states`));
+      .do( states => this.logger.log(`Got ${states.length} states`))
+      .catch( (error: any) => {
+        this.logger.log(`An error occurred ${error}`); // for demo purposes only
+        return Observable.throw('Something bad happened with getting states please check the console', error);
+      } );
   }
 }
