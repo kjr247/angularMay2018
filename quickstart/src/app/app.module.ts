@@ -16,8 +16,8 @@ import { InMemoryWebApiModule }    from 'angular-in-memory-web-api';
   imports: [                  // What stuff do I need?
     BrowserModule,
     FormsModule,
+    HttpModule, /* Order Matters here! */
     InMemoryWebApiModule.forRoot(InMemoryDataService), /* for ease of deving */
-    HttpModule
   ],
   declarations: [             // What's in my app module?
     AppComponent,
