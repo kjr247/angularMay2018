@@ -28,11 +28,8 @@ export class AddressComponent implements OnInit  {
     this.logger.log(`Getting states ... `);
     this.dataService.getStates().subscribe( states => {
       this.isGettingStates = false;
-      this.logger.log(`Got ${this.states.length}`);
+      this.logger.log(`Got ${states.length} states`);
       this.states = states;
-    }, (errorMsg) => {
-      this.isGettingStates = false;
-      alert(errorMsg);
     });
   }
 }
