@@ -42,3 +42,5 @@ export function createTestCustomers() {
     }
   ];
 }
+
+export const states = ['California', 'Illinois', 'Jalisco', 'Quebec'];
